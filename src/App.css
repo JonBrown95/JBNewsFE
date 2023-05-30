@@ -1,42 +1,99 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Navbar */
+.navbar {
+  display: inline;
+}
+
+  .navbar-ul {
+    list-style-type: none;
+     margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #407BFF;
+   }
+   li {
+    float: left;
+   }
+   li .nav-li {
+    display: block;
+    color: rgb(253, 251, 251);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+   }
+ 
+/* Homepage */
+.homepage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  overflow: hidden;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.background-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  
+  
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.overlay-text {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  margin-top: -550px;
+  color: rgb(8, 6, 6);
+  
+}
+
+
+/* /Articles */
+   .articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .article-item {
+    flex-basis: calc(33.33% - 20px); 
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  
+  
+  @media (max-width: 991px) {
+    .article-item {
+      width: calc(50% - 20px);
+    }
   }
-}
+  
+  @media (max-width: 767px) {
+    .article-item {
+      width: calc(100% - 20px);
+    }
+  }
+  
+  
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    
+  }
