@@ -26,6 +26,7 @@ function Articles() {
   }
 
   return (
+    
     <div className="articles-container">
       {articles.map((article) => (
         <ArticleCard key={article.id} article={article} />
