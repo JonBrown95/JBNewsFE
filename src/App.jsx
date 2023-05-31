@@ -4,6 +4,7 @@ import "./App.css";
 import Nav from "./Components/Nav";
 import Articles from "./Components/Articles";
 import Homepage from "./Components/Homepage";
+import SingleArticle from "./Components/SingleArticle";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/articles" element={<Articles />} />
+        <Route path="/articles/:article_id" element={<SingleArticle/>} />
       </Routes>
     </BrowserRouter>
   );
