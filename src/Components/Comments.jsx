@@ -6,15 +6,13 @@ function Comments({ articleId }) {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    fetchComments();
-  }, []);
-
-  function fetchComments() {
-    getComments(articleId).then((comments) => {
+    getComments(articleId)
+    .then((comments) => {
       setComments(comments);
-      console.log(comments);
+      setIsLoading(false)
     });
-  }
+  }, []);
+  
 
   return (
     <div className="comments-container">
