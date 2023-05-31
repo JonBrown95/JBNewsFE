@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getArticle, getArticles } from "../Utility";
+import { getArticle, getArticles, getComments} from "../Utility";
+import Comments from "./Comments";
+
 
 function SingleArticle() {
   const { article_id } = useParams();
@@ -17,7 +19,6 @@ if (isLoading) {
 function fetchArticle() {
   getArticle(article_id).then((singleArticle) => {
     setArticle(singleArticle);
-    console.log(singleArticle)
     setIsLoading(false)
   });
 }
@@ -37,11 +38,12 @@ return (
         <div className="article-info">
           <p className="article-author">By {article.article.author}</p>
           <p className="article-date">{article.article.created_at} </p>
-          <p className="article-topic"> Topic: {article.article.topic}</p>
+          <p className="article-topic">Topic: {article.article.topic}</p>
         </div>
         <p className="article-body">{article.article.body}</p>
+        <Comments articleId={article_id} />
       </div>
     </div>
-  );
-}  
+  )}
+  
 export default SingleArticle;

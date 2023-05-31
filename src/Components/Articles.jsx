@@ -18,7 +18,7 @@ function Articles() {
 
   function fetchArticles() {
     getArticles().then((fetchedArticles) => {
-      console.log(fetchedArticles);
+      
       const articles = fetchedArticles.articles;
       setArticles(articles);
       setIsLoading(false)
