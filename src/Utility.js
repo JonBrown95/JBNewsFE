@@ -13,7 +13,12 @@ export function getArticles(endpoint = "/articles/") {
     }
   });
 }
-
+export function getComments(articleId) {
+    return apiLink.get(`articles/${articleId}/comments`).then(({ data }) => {
+      return data.comments;
+    });
+  }
+  
 export function getArticle(articleId) {
   return apiLink.get(`/articles/${articleId}`).then(({ data }) => {
     return data;
