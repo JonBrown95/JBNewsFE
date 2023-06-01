@@ -1,6 +1,6 @@
 import { updateVotes } from "../Utility";
 import { useState } from "react";
-import staticlike from "../assets/staticlike.png";
+import like from "../assets/like.png"
 import dislike from "../assets/dislike.png";
 
 function UpdateArticleVotes({ articleId, votes }) {
@@ -45,7 +45,7 @@ function UpdateArticleVotes({ articleId, votes }) {
       {err ? <p>{err}</p> : null}
       <div>Votes: {voteCount} </div>
       <img
-        src={staticlike}
+        src={like}
         alt={"Upvote icon"}
         style={{
           width: "33px",

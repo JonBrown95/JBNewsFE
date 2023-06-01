@@ -24,3 +24,7 @@ export function getArticle(articleId) {
     return data;
   });
 }
+
+export function updateVotes(votes, articleId) {
+    return apiLink.patch(`/articles/${articleId}`, { inc_votes: votes } );
+  }

@@ -1,14 +1,11 @@
 import { getComments } from "../Utility";
 import { useState, useEffect } from "react";
-import like from "../assets/like.png";
+import like from "../assets/commentlike.png";
 import user from "../assets/user.png"
 function Comments({ articleId }) {
   const [comments, setComments] = useState([]);
-<<<<<<< Updated upstream
 
-=======
 const [isLoading, setIsLoading] = useState(true)
->>>>>>> Stashed changes
   useEffect(() => {
     getComments(articleId)
     .then((comments) => {
