@@ -4,7 +4,11 @@ import like from "../assets/like.png";
 import user from "../assets/user.png"
 function Comments({ articleId }) {
   const [comments, setComments] = useState([]);
+<<<<<<< Updated upstream
 
+=======
+const [isLoading, setIsLoading] = useState(true)
+>>>>>>> Stashed changes
   useEffect(() => {
     getComments(articleId)
     .then((comments) => {

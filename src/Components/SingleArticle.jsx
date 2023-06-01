@@ -38,9 +38,16 @@ return (
           <p className="article-author">By {article.article.author}</p>
           <p className="article-date">{article.article.created_at} </p>
           <p className="article-topic"> Topic: {article.article.topic}</p>
+<<<<<<< Updated upstream
+=======
+          
+          <UpdateArticleVotes articleId={article_id}
+          votes={article.article.votes}/>
+>>>>>>> Stashed changes
         </div>
         <p className="article-body">{article.article.body}</p>
-        <Comments articleId={article_id} />
+        <Comments articleId={article_id} 
+        />
       </div>
     </div>
   );
