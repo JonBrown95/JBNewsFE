@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticle, getArticles } from "../Utility";
 import Comments from "./Comments";
+import UpdateArticleVotes from "./UpdateArticleVotes";
 
 function SingleArticle() {
   const { article_id } = useParams();
@@ -38,6 +39,8 @@ return (
           <p className="article-author">By {article.article.author}</p>
           <p className="article-date">{article.article.created_at} </p>
           <p className="article-topic"> Topic: {article.article.topic}</p>
+          
+          <UpdateArticleVotes articleId={article_id}/>
         </div>
         <p className="article-body">{article.article.body}</p>
         <Comments articleId={article_id} />

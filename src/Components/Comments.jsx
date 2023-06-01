@@ -4,7 +4,7 @@ import like from "../assets/like.png";
 import user from "../assets/user.png"
 function Comments({ articleId }) {
   const [comments, setComments] = useState([]);
-
+const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     getComments(articleId)
     .then((comments) => {
