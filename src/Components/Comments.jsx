@@ -5,7 +5,6 @@ import user from "../assets/user.png";
 import NewComment from "./NewComment";
 function Comments({ articleId }) {
   const [comments, setComments] = useState([]);
- 
 
   useEffect(() => {
     getComments(articleId).then((comments) => {
@@ -16,8 +15,9 @@ function Comments({ articleId }) {
 
   const commentSubmit = (newComment) => {
     const commentWithUsername = {
-        ...newComment,
-        author: "grumpy19"}
+      ...newComment,
+      author: "grumpy19",
+    };
     setComments((prevComments) => [commentWithUsername, ...prevComments]);
     addComment(articleId, newComment);
     console.log(comments);
