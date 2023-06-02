@@ -34,3 +34,15 @@ export function addComment(articleId, comment) {
   return apiLink.post(`/articles/${articleId}/comments`, comment);
   
 }
+
+export function getTopics() {
+    return apiLink.get('/topics').then(({data}) => {
+        return data
+    })
+}
+
+export function GetSingleTopic(slug) {
+  return apiLink.get(`topics/${slug}`).then(({data}) => {
+    return data
+  })
+}

@@ -7,6 +7,8 @@ import Homepage from "./Components/Homepage";
 import SingleArticle from "./Components/SingleArticle";
 import Topics from "./Components/Topics";
 
+import TopicPage from "./Components/TopicPage";
+
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,7 @@ function App() {
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:article_id" element={<SingleArticle/>} />
         <Route path="/topics" element={<Topics/>} />
+        <Route path="/topics/:slug" element={<TopicPage/>} />
       </Routes>
     </BrowserRouter>
   );
