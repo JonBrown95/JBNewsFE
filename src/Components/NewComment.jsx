@@ -8,9 +8,10 @@ function NewComment({ articleId, commentSubmit}) {
     if (!commentText) return;
 
     const newComment = {
-      author: "grumpy19",
+      username: "grumpy19",
       body: commentText,
       article_id: +articleId,
+      
     };
     
     commentSubmit(newComment)

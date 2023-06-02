@@ -14,8 +14,11 @@ function Comments({ articleId }) {
     });
   }, []);
 
-  const refreshComment = (newComment) => {
-    setComments((prevComments) => [newComment, ...prevComments]);
+  const commentSubmit = (newComment) => {
+    const commentWithUsername = {
+        ...newComment,
+        author: "grumpy19"}
+    setComments((prevComments) => [commentWithUsername, ...prevComments]);
     addComment(articleId, newComment);
     console.log(comments);
   };
@@ -23,7 +26,7 @@ function Comments({ articleId }) {
   return (
     <div className="comments-container">
       <h3>Comments</h3>
-      <NewComment articleId={articleId} commentSubmit={refreshComment} />
+      <NewComment articleId={articleId} commentSubmit={commentSubmit} />
       {comments.map((comment) => (
         <div key={comment.comment_id} className="comment">
           <p>{comment.body}</p>
