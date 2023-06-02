@@ -5,6 +5,7 @@ import Nav from "./Components/Nav";
 import Articles from "./Components/Articles";
 import Homepage from "./Components/Homepage";
 import SingleArticle from "./Components/SingleArticle";
+import Topics from "./Components/Topics";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:article_id" element={<SingleArticle/>} />
+        <Route path="/topics" element={<Topics/>} />
       </Routes>
     </BrowserRouter>
   );

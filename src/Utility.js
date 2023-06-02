@@ -14,11 +14,11 @@ export function getArticles(endpoint = "/articles/") {
   });
 }
 export function getComments(articleId) {
-    return apiLink.get(`articles/${articleId}/comments`).then(({ data }) => {
-      return data.comments;
-    });
-  }
-  
+  return apiLink.get(`articles/${articleId}/comments`).then(({ data }) => {
+    return data.comments;
+  });
+}
+
 export function getArticle(articleId) {
   return apiLink.get(`/articles/${articleId}`).then(({ data }) => {
     return data;
@@ -26,5 +26,11 @@ export function getArticle(articleId) {
 }
 
 export function updateVotes(votes, articleId) {
-    return apiLink.patch(`/articles/${articleId}`, { inc_votes: votes } );
-  }
+  return apiLink.patch(`/articles/${articleId}`, { inc_votes: votes });
+}
+
+export function addComment(articleId, comment) {
+  
+  return apiLink.post(`/articles/${articleId}/comments`, comment);
+  
+}
